@@ -1,3 +1,6 @@
 django
 pillow
 whitenoise
+bootstrap4
+django_forms_bootstrap
+django-bootstrap4

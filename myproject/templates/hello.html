@@ -1,110 +1,27 @@
-<!-- templates/base.html -->
-
-{% load static %}
+{% load static %} {% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/bootstrap-icons.css' %}" />
     <link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" />
 
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
-    <script src="{% static 'js/jquery-ui.min.js}"></script>
-
-    <title>Dialingo</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.gstatic.com" rel="preconnect" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-      rel="stylesheet"
-    />
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
   </head>
-  <body class="toggle-sidebar">
-    <!-- ======= Header ======= -->
-    <header id="header" class="header fixed-top d-flex align-items-center">
-      <div class="d-flex align-items-center justify-content-between">
-        <a href="/" class="logo d-flex align-items-center">
-          <img src="../static/assets/img/sun.png" alt="" />
-          <span class="d-none d-lg-block">ShadowIT</span>
-        </a>
-        <!-- <i class="bi bi-list toggle-sidebar-btn"></i> -->
-      </div>
-      <!-- End Logo -->
-
-      {% if current_user.is_authenticated %}
-      <nav class="header-nav ms-auto">
-        <ul class="d-flex align-items-center">
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link nav-profile d-flex align-items-center pe-0"
-              href="/intro_desc"
-            >
-              소개
-              <!-- <i class="bi bi-bell"></i> -->
-            </a>
-          </li>
-
-          <li class="nav-item dropdown pe-3">
-            <a
-              class="nav-link nav-profile d-flex align-items-center pe-0"
-              href="/dashboard"
-            >
-              현황
-            </a>
-          </li>
-
-          <li class="nav-item dropdown pe-3">
-            <a
-              class="nav-link nav-profile d-flex align-items-center pe-0"
-              href="/logout"
-            >
-              로그아웃
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- End Icons Navigation -->
-      {% else %}
-      <nav class="header-nav ms-auto">
-        <ul class="d-flex align-items-center">
-          <li class="nav-item dropdown pe-3">
-            <a
-              class="nav-link nav-profile d-flex align-items-center pe-0"
-              href="/login"
-            >
-              로그인
-            </a>
-          </li>
-        </ul>
-      </nav>
-      {% endif %}
-    </header>
-    <!-- End Header -->
-
-    <main id="main" class="main">{% block content_block %} {% endblock %}</main>
-    <!-- End #main -->
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-      <div class="copyright">
-        &copy; Copyright <strong><span>Dialingo</span></strong
-        >. All Rights Reserved
-      </div>
-    </footer>
-    <!-- End Footer -->
-
-    <a
-      href="#"
-      class="back-to-top d-flex align-items-center justify-content-center active"
-      ><i class="bi bi-arrow-up-short"></i
-    ></a>
-  </body>
+  {% block content %}
+  <div class="container mt-5">
+    <div class="jumbotron">
+      <h1 class="display-4">Welcome to My Website!</h1>
+      <p class="lead">
+        This is a simple Django web application with Bootstrap 4.
+      </p>
+      <hr class="my-4" />
+      <p>Feel free to explore and enjoy!</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
+  </div>
+  {% endblock %}
 </html>

@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-9xbza@h%sm2#-f+^3e!f&0=wmnuf42s*52u%1+ye$itfbs(^+*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dialingo.azurewebsites.net']
+ALLOWED_HOSTS = ['dialingo.azurewebsites.net', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap4',
     'myproject'
 ]
 
@@ -121,7 +122,8 @@ USE_TZ = True
 #STATICFILES_DIRS = [BASE_DIR / 'static']
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'static'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 #DEBUG FALSE인 경우 스타일 못찾을 때 사용
 #STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
