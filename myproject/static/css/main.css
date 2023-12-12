@@ -6,52 +6,39 @@ body {
   overflow-x: hidden; /* 가로 스크롤 제거 */
 }
 
-.main-container {
+.container {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  /* 기존 코드 유지 */
   width: 360px;
   height: 740px;
-  background: #FFFFFF;
+  background: #3DB2FF;
 }
 
 /* Navigation */
 .navigation {
-  position: absolute;
+  position: fixed;
+  top: 0;
   width: 100%;
   height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background: #FFFFFF;
   border-bottom: 1px solid #000000;
+  z-index: 1000; /* 다른 요소 위에 놓이도록 설정 */
 }
 
-/* Menu button */
-.menu-button {
-  cursor: pointer;
-  margin-left: 10px;
+/* Logo */
+.logo-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/* Language button */
-.language-button {
-  cursor: pointer;
-  margin-right: 10px;
-}
-
-/* Dropdown menu */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 100px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
+.logo-container img {
+  max-height: 50px; /* 로고 이미지의 최대 너비 설정 */
+  width: auto; /* 높이 자동 조정 */
 }
 
 /* Image area */

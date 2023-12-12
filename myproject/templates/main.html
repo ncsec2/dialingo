@@ -8,34 +8,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dialing</title>
-  <link rel="stylesheet" href="{% static 'css/common.css' %}">
   <link rel="stylesheet" href="{% static 'css/main.css' %}">
 </head>
 
 <body>
   <div class="container">
-    <div class="navigation">
-      <!-- Menu dropdown -->
-      <div class="dropdown">
-        <button class="menu-button">Menu</button>
-        <div class="dropdown-content">
-          <!-- Dropdown menu items -->
-          <a href="#">Item 1</a>
-          <a href="#">Item 2</a>
-          <a href="#">Item 3</a>
-        </div>
-      </div>
 
-      <!-- Language dropdown -->
-      <div class="dropdown">
-        <button class="language-button">Language</button>
-        <div class="dropdown-content">
-          <!-- Dropdown menu items for language selection -->
-          <a href="#">한국어</a>
-          <a href="#">English</a>
-        </div>
+    <div class="navigation">
+      <!-- Logo Image -->
+      <div class="logo-container">
+          <img src="{% static 'src/logo_text.png' %}" alt="Your Logo" id="logoButton">
       </div>
-    </div>
+  </div>
 
     <!-- Image area -->
     <div class="image-area">
@@ -46,7 +30,7 @@
     <div class="select-area">
       <select class="from-button" id="from-select">
         <!-- Dropdown menu items for 'from' selection -->
-        <option value="" selected disabled>From</option>
+        <option value="" selected disabled>방언 지역 선택</option>
         <option value="option1">제주도</option>
         <option value="option2">경상도</option>
         <option value="option3">강원도</option>
@@ -58,7 +42,7 @@
 
       <select class="to-button" id="to-select">
         <!-- Dropdown menu items for 'to' selection -->
-        <option value="" selected disabled>To</option>
+        <option value="" selected disabled>번역 언어 선택</option>
         <option value="option1">베트남어</option>
         <option value="option2">영어</option>
         <option value="option3">일본어</option>
@@ -85,6 +69,12 @@
   document.getElementById('text_service').addEventListener('click', function() {
     window.location.href = "{% url 'hello_world' %}"; // 'your_view_name'은 대상 뷰의 이름
   });
+  //상단 로고 클릭하면 start페이지로
+  document.getElementById('logoButton').addEventListener('click', function() {
+    window.location.href = "{% url 'start_page' %}"; // 'your_view_name'은 대상 뷰의 이름
+  });
+
+  logoButton
 </script>
 
 </html>

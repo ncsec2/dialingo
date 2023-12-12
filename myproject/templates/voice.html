@@ -92,6 +92,8 @@ document.getElementById('micButton').addEventListener('click', function() {
             }
             // console.log()
             // document.getElementById('inputText').innerText = JSON.stringify(data, null, 2);
+            document.querySelector('.title').innerText = "입력이 완료되었습니다."; // 이 부분이 추가된 부분입니다.
+
         })
         .catch(error => console.error('Error:', error));
 });
