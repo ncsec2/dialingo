@@ -45,6 +45,7 @@ def get_voice(request):
     # speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 
     # 오디오 파일 또는 오디오 스트림 지정 (예: WAV 파일 경로)
+    print(settings.MEDIA_ROOT)
     audio_file_path = os.path.join(settings.MEDIA_ROOT, 'recordings', 'jeju1.wav')
     audio_config = speechsdk.audio.AudioConfig(filename=audio_file_path)
     speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
