@@ -4,3 +4,4 @@ whitenoise
 bootstrap4
 django_forms_bootstrap
 django-bootstrap4
+azure-cognitiveservices-speech
