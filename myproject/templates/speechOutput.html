@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>speech-service</title>
+    <link rel="stylesheet" href="../static/css/speechOutput.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navigation">
+            <!-- Menu dropdown -->
+            <div class="dropdown">
+                <button class="menu-button">Menu</button>
+                <div class="dropdown-content">
+                    <!-- Dropdown menu items -->
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                </div>
+            </div>
+
+            <!-- Language dropdown -->
+            <div class="dropdown">
+                <button class="language-button">Language</button>
+                <div class="dropdown-content">
+                    <!-- Dropdown menu items for language selection -->
+                    <a href="#">한국어</a>
+                    <a href="#">English</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="close-button" id="closeButton">
+            <img src="../static/src/close.png" alt="Close" width="20" height="20">
+        </button>
+
+
+        <div class="input_text" id="inputText">
+            <!-- 여기에 텍스트를 추가합니다. -->
+            <p class="input-label">표준어 번역 결과:</p>
+        </div>
+
+        <div class="input_text" id="outputText">
+            <p class="input-label">최종 번역 결과:</p>
+        </div>
+
+        <div class="footer">
+            <div class="button-wrapper">
+                <img src="../static/src/replay.png" id="replayButton" alt="Repeat" width="30" height="30">
+                <span id="replay">다시 입력하기</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* 다시 입력페이지로 */
+        document.getElementById('replayButton').addEventListener('click', function () {
+            window.location.href = 'speech.html';
+        });
+
+         /* 메인 페이지로 이동 */
+         document.getElementById('closeButton').addEventListener('click', function () {
+            window.location.href = 'main.html';
+        });
+
+    </script>
+
+</body>
+
+</html>

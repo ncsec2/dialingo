@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 360px;
+    height: 740px;
+    background: #3DB2FF;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+}
+
+/* Navigation */
+.navigation {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #FFFFFF;
+    border-bottom: 1px solid #000000;
+}
+
+/* Menu button */
+.menu-button {
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+/* Language button */
+.language-button {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* Dropdown menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* Show dropdown content on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.close-button {
+    position: absolute;
+    margin-top: 50px;
+    top: 10px; /* 원하는 위치에 따라 조절하세요 */
+    right: 10px; /* 원하는 위치에 따라 조절하세요 */
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    z-index: 1000;
+}
+
+.close-button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+
+.close-button img {
+    width: 20px;
+    height: 20px;
+}
+
+
+/* Input text area */
+.input_text {
+    width: 80%;
+    height: 100px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* 추가된 부분: 절대 위치 설정을 위한 부모 요소 */
+}
+
+.input-label {
+    position: absolute;
+    top: 0px;
+    left: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+/* Footer */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-bottom: 30px;
+    align-items: center;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-wrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.button-wrapper img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.button-wrapper span {
+    font-size: 14px;
+}

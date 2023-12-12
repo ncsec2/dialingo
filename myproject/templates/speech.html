@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>speech-service</title>
+    <link rel="stylesheet" href="../static/css/speech.css">
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="navigation">
+            <!-- Menu dropdown -->
+            <div class="dropdown">
+                <button class="menu-button">Menu</button>
+                <div class="dropdown-content">
+                    <!-- Dropdown menu items -->
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                </div>
+            </div>
+
+            <!-- Language dropdown -->
+            <div class="dropdown">
+                <button class="language-button">Language</button>
+                <div class="dropdown-content">
+                    <!-- Dropdown menu items for language selection -->
+                    <a href="#">한국어</a>
+                    <a href="#">English</a>
+                </div>
+            </div>
+        </div>
+
+        <button class="close-button" id="closeButton">
+          <img src="../static/src/close.png" alt="Close" width="20" height="20">
+      </button>
+
+
+        <div class="img-area">
+            <span class="mike_img">
+                <img src="../static/src/mic.png" id="micButton" />
+            </span>
+            <p class="title">입력을 원하시면 마이크 버튼을 눌러주세요.</p>
+        </div>
+        <div class="input_text" id="inputText"></div>
+
+
+        <div class="footer">
+            <div class="button-wrapper">
+                <img src="../static/src/replay.png" id="replayButton" alt="Repeat" width="30" height="30">
+                <span id="replay">다시 입력하기</span>
+            </div>
+            <div class="button-wrapper">
+                <img src="../static/src/next.png" id="nextButton" alt="Next" width="30" height="30">
+                <span id="next">결과 확인하기</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /*Voice 입력 받기 */
+        document.getElementById('micButton').addEventListener('click', function () {
+            document.querySelector('.title').innerText = "입력 중입니다. 말씀해주세요.";
+            fetch('/get_voice/')
+                .then(response => response.json())
+                .then(data => {
+                    // 여기에서 서버에서 받은 JSON 데이터(data)를 활용하여 원하는 동작을 수행
+                    console.log(data);
+                    document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+                })
+                .catch(error => console.error('Error:', error));
+        });
+
+
+        /* 결과 페이지로 넘어가기 */
+        document.getElementById('nextButton').addEventListener('click', function () {
+            window.location.href = 'speechOutput.html';
+        });
+
+        /* 다시 입력페이지로 */
+        document.getElementById('replayButton').addEventListener('click', function () {
+            window.location.href = 'speech.html';
+        });
+
+          /* 메인 페이지로 이동 */
+          document.getElementById('closeButton').addEventListener('click', function () {
+          window.location.href = 'main.html';
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

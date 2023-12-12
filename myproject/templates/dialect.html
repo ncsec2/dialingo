@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>언어 선택</title>
+    <link rel="stylesheet" href="../static/css/dialect.css">
+    <link rel="stylesheet" href="../static/css/common.css">
+    <link rel="stylesheet" href="../static/css/main.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="navigation">
+            <!-- Menu dropdown -->
+            <div class="dropdown">
+                <button class="menu-button">Menu</button>
+                <div class="dropdown-content">
+                    <!-- Dropdown menu items -->
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                </div>
+            </div>
+
+            <!-- Language dropdown -->
+            <div class="dropdown">
+                <button class="language-button">Language</button>
+                <div class="dropdown-content">
+                    <!-- Dropdown menu items for language selection -->
+                    <a href="#">한국어</a>
+                    <a href="#">English</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="select-area">
+            <!-- 선택 영역 -->
+            <p class="title">어느 지역의 방언인가요?</p>
+            <button class="from-button">from</button>
+            <button class="to-button">to</button>
+        </div>
+
+        <div class="language-area">
+            <!-- 언어 선택 영역 -->
+            <ul id="languageList">
+                <li>강원도</li>
+                <li>경상도</li>
+                <li>전라도</li>
+                <li>제주도</li>
+                <li>충청도</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // JavaScript 코드 시작
+        document.addEventListener('DOMContentLoaded', function () {
+            // languageList의 각 요소에 대해 클릭 이벤트를 추가
+            const languageItems = document.querySelectorAll('#languageList li');
+            const fromButton = document.querySelector('.from-button');
+
+            languageItems.forEach(item => {
+                item.addEventListener('click', function () {
+                    // 클릭한 요소의 텍스트를 가져와서 fromButton의 텍스트로 설정
+                    fromButton.textContent = this.textContent;
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

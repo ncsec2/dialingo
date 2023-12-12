@@ -50,12 +50,17 @@
 
 <script>
   // 버튼이 클릭되면 특정 URL로 리다이렉션하는 함수
+  /* 이진님 코드
   document.getElementById('voice_service').addEventListener('click', function() {
       window.location.href = "{% url 'voice_page' %}";  // 'your_view_name'은 대상 뷰의 이름
   });
   document.getElementById('text_service').addEventListener('click', function() {
       window.location.href = "{% url 'hello_world' %}";  // 'your_view_name'은 대상 뷰의 이름
-  });  
+  }); 
+  */
+  document.getElementById('voice_service').addEventListener('click', function () {
+    window.location.href = 'speech.html';
+  });
 </script>
 
 </html>
