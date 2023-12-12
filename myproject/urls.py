@@ -23,6 +23,12 @@ from myproject import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello/', views.hello_world, name='hello_world'),
+    #음성/텍스트선택
     path('main/', views.main_page, name='main_page'),
+    #home
     path('', views.start_page, name='start_page')
+    #음성
+    path('voice/', views.main_page, name='voice_page'),
+    #텍스트
+    path('text/', views.main_page, name='text_page'),
 ]

@@ -13,3 +13,9 @@ def main_page(request):
 
 def start_page(request):
     return render(request, 'start.html')
+
+def voice_page(request):
+    return render(request, 'voice.html')
+
+def text_page(request):
+    return render(request, 'text.html')
