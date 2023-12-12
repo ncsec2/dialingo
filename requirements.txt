@@ -7,3 +7,10 @@ django-bootstrap4
 azure-cognitiveservices-speech
 django-storages
 #azure-storage-blob
+pandas
+numpy
+torch
+transformers
+sentencepiece
+matplotlib
+tqdm

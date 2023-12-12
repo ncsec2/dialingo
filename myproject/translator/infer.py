@@ -2,12 +2,9 @@ import argparse
 import os
 import torch
 import json
-import numpy as np
 import sentencepiece as spm
 
-from data import NMTDataset, collate_fn
-from model import Transformer, Encoder, Decoder
-from utils import AverageMeter, Logger
+from .model import Transformer, Encoder, Decoder
 
 def main(args):
 

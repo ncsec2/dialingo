@@ -8,7 +8,27 @@
     <title>speech-service</title>
     <link rel="stylesheet" href="{% static 'css/speech.css' %}">     
 
+    <style>
+        #microphone {
+            width: 50px;
+            height: 50px;
+            background-color: #3498db;
+            border-radius: 50%;
+            position: relative;
+            animation: pulse 1s infinite alternate; /* 마이크 효과 애니메이션 */
+        }
 
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(52, 152, 219, 0.7);
+            }
+            100% {
+                transform: scale(1.2);
+                box-shadow: 0 0 0 10px rgba(52, 152, 219, 0);
+            }
+        }
+    </style>    
 
 </head>
 
@@ -51,6 +71,7 @@
         </div>
         <div class="input_text" id="inputText"></div>
 
+        <button id="translator">번역</button>
 
         <div class="footer">
             <div class="button-wrapper">
@@ -76,6 +97,12 @@
                     document.getElementById('output').innerText = JSON.stringify(data, null, 2);
                 })
                 .catch(error => console.error('Error:', error));
+        });
+
+
+        /* 결과 페이지로 넘어가기 */
+        document.getElementById('nextButton').addEventListener('click', function () {
+            window.location.href = 'speechOutput.html';
         });
 
 

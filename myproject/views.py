@@ -5,6 +5,8 @@ import azure.cognitiveservices.speech as speechsdk
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 import os
+import argparse
+from .translator import infer
 
 # def hello_world(request):
 #     return HttpResponse("Hello, World!")
@@ -77,6 +79,28 @@ def get_voice(request):
         return JsonResponse({'error': f'Speech Recognition canceled: {cancellation_details.reason}'})
 
     # return render(request, 'voice.html', )
+
+def translate(request):
+    parser = argparse.ArgumentParser(description='Transformer dialect machine translation')
+    parser.add_argument('--data-dir', default='./dataset',type=str,
+                        help='path to dataset directory')
+    parser.add_argument('--ckpt', default='./results/model.pth',type=str,
+                        help='Path in which saved the model file')
+    parser.add_argument('--dial-num', default=4, type=int, help='Number of dialects')
+    parser.add_argument('--input-sent', default='안녕', help='Input sentence to translate')
+    args = parser.parse_args()
+
+    # Modify the input-sent argument
+    #args.input_sent = input("Enter the new input sentence: ")
+    args.input_sent = request.POST.get('user_sentences')
+
+    # Call the main function from infer.py
+    translated_text = infer.main(args)
+
+    return translated_text
+    # return render(request, 'voice.html')    
+
+
 
 #type 변환 필요
 @csrf_exempt  # 임시로 CSRF 보호 비활성화 (실제 프로젝트에서는 보안 고려 필요)
