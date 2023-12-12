@@ -8,7 +8,7 @@ from .model import Transformer, Encoder, Decoder
 from django.conf import settings
 
 def main(args):
-    absolute_path = os.path.join(settings.TRANSLATOR_ROOT, args.ckpt)
+    absolute_path = os.path.abspath(os.path.join(settings.TRANSLATOR_ROOT, args.ckpt))
     # Get configuration
     config_path = os.path.join(os.path.dirname(absolute_path), 'configuration.json')
 
@@ -18,9 +18,7 @@ def main(args):
 
     print(config_path)
     with open(config_path,'r') as f:
-        print(f)
         config = json.load(f)
-        
 
     # Load Dataset
     sp = spm.SentencePieceProcessor()
