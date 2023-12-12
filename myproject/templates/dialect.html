@@ -42,21 +42,39 @@
 
         <div class="select-area">
             <!-- 선택 영역 -->
-            <p class="title">어느 지역의 방언인가요?</p>
-            <button class="from-button">from</button>
-            <button class="to-button">to</button>
+            <p class="title"></p>
+            <!-- <button class="from-button">from</button>
+            <button class="to-button">to</button> -->
         </div>
 
         <div class="language-area">
-            <!-- 언어 선택 영역 -->
-            <ul id="languageList">
-                <li>강원도</li>
-                <li>경상도</li>
-                <li>전라도</li>
-                <li>제주도</li>
-                <li>충청도</li>
-            </ul>
+            <div class="col-md-6">
+                <h2 class="mb-4">언어 선택</h2>
+                <div class="form-group">
+                    <label for="exampleSelect">지역 방언:</label>
+                    <select class="form-control" id="exampleSelect">
+                        <option value="" selected disabled>선택</option>
+                        <option value="jeju">제주도</option>
+                        <option value="gyeongsang">경상도</option>
+                        <option value="gangwon">강원도</option>
+                        <option value="jeolla">전라도</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="exampleSelect">지역 방언:</label>
+                    <select class="form-control" id="exampleSelect">
+                        <option value="" selected disabled>선택</option>
+                        <option value="jeju">제주도</option>
+                        <option value="gyeongsang">경상도</option>
+                        <option value="gangwon">강원도</option>
+                        <option value="jeolla">전라도</option>
+                    </select>
+                </div>
+            </div>
         </div>
+    
 
     </div>
 
