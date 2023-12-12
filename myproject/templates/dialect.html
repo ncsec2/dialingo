@@ -74,6 +74,9 @@
                 </div>
             </div>
         </div>
+        <div class="buttonContainer">
+            <button id="startService" onclick="submit">다음 단계로</button>
+        </div>
     
     </div>
 
@@ -91,6 +94,11 @@
                     fromButton.textContent = this.textContent;
                 });
             });
+        });
+
+        /* 메인 페이지로 넘어가기 */
+        document.getElementById('startService').addEventListener('click', function () {
+            window.location.href = "{% url 'main_page' %}";  // 'your_view_name'은 대상 뷰의 이름
         });
     </script>
 </body>

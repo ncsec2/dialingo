@@ -121,3 +121,33 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: auto; /* 기본 너비 설정 */
+    min-width: 300px; /* 적절한 최소 너비로 조정 */
+    height: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(50% - 58px/2 + 275px);
+    background: #FFFFFF;
+    border-radius: 40px;
+  }
+  
+  button#startService {
+    width: auto; /* 버튼의 너비를 자동으로 조정 */
+    height: 24px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #0693F1;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
