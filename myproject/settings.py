@@ -132,6 +132,9 @@ STATIC_ROOT = BASE_DIR / 'static'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'myproject' / 'media'
 
+TRANSLATOR_URL = '/translator/'
+TRANSLATOR_ROOT = BASE_DIR / 'myproject' / 'translator'
+
 # 404 에러 페이지 설정
 handler404 = 'myproject.views.handler404'
 

@@ -5,12 +5,17 @@ import json
 import sentencepiece as spm
 
 from .model import Transformer, Encoder, Decoder
+from django.conf import settings
 
 def main(args):
-    print("os.path.dirname(args.ckpt): ", os.path.dirname(args.ckpt))
+    absolute_path = os.path.join(settings.TRANSLATOR_ROOT, args.ckpt)
+    # Get configuration
+    config_path = os.path.join(os.path.dirname(absolute_path), 'configuration.json')
+
+    print("config_path: ", config_path)
     # Get configuration
     # config_path = os.path.dirname(args.ckpt)+'/configuration.json'
-    config_path = '../translator/results/configuration.json'
+
     print(config_path)
     with open(config_path,'r') as f:
         print(f)
