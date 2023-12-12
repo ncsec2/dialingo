@@ -85,6 +85,7 @@ document.getElementById('micButton').addEventListener('click', function() {
             // 여기에서 서버에서 받은 JSON 데이터(data)를 활용하여 원하는 동작을 수행
             console.log(data);
             document.getElementById('inputText').innerText = JSON.stringify(data, null, 2);
+            document.querySelector('.title').innerText = "입력이 완료되었습니다."; // 이 부분이 추가된 부분입니다.
         })
         .catch(error => console.error('Error:', error));
 });
