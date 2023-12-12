@@ -1,0 +1,10 @@
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 기존 코드 유지 */
+    width: 360px;
+    height: 740px;
+    background: #3DB2FF;
+  }

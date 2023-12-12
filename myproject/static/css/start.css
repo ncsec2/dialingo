@@ -1,0 +1,74 @@
+/* Start */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* 위의 transform 속성은 container의 너비와 높이를 고려하여 중앙 정렬을 수행합니다. */
+    width: 360px;
+    height: 740px;
+    background: #3DB2FF;
+  }
+
+  
+  /* Logo */
+  .logo {
+    position: absolute;
+    width: 360px;
+    height: 313px;
+    left: calc(50% - 360px/2);
+    top: calc(50% - 313px/2 - 77.5px);
+    background: url('../src/logo_white_mix_big.png') center/cover no-repeat; /* 배경 이미지 추가 */
+  }
+  
+  /* Text */
+  .content {
+    position: absolute;
+    width: 270px;
+    height: 50px;
+    left: calc(50% - 255px/2 - 0.5px);
+    bottom: 267px;
+    font-weight: 300;
+    font-size: 17px;
+    line-height: 25px; /* 수정 */
+    text-align: center;
+    color: #000000;
+  }
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: auto; /* 기본 너비 설정 */
+    min-width: 300px; /* 적절한 최소 너비로 조정 */
+    height: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(50% - 58px/2 + 275px);
+    background: #FFFFFF;
+    border-radius: 40px;
+  }
+  
+  button#startButton {
+    width: auto; /* 버튼의 너비를 자동으로 조정 */
+    height: 24px;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: center;
+    letter-spacing: 0.01em;
+    color: #0693F1;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+  }
+  
+  
