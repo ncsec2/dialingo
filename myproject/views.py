@@ -24,6 +24,10 @@ def start_page(request):
 def voice_page(request):
     return render(request, 'voice.html')
 
+#음성
+def voice_output_page(request):
+    return render(request, 'voiceOutput.html')
+
 #문자
 def text_page(request):
     return render(request, 'text.html')

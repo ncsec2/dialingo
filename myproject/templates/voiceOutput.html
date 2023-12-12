@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>speech-service</title>
-    <link rel="stylesheet" href="{% static 'css/speechOut.css' %}">     
+    <link rel="stylesheet" href="{% static 'css/voiceOutput.css' %}">     
 
 
 
@@ -39,7 +39,7 @@
         </div>
 
         <button class="close-button" id="closeButton">
-            <img src="../static/src/close.png" alt="Close" width="20" height="20">
+            <img src="{% static 'src/close.png' %} " alt="Close" width="20" height="20">
         </button>
 
 
@@ -54,7 +54,7 @@
 
         <div class="footer">
             <div class="button-wrapper">
-                <img src="../static/src/replay.png" id="replayButton" alt="Repeat" width="30" height="30">
+                <img src="{% static 'src/replay.png' %}" id="replayButton" alt="Repeat" width="30" height="30">
                 <span id="replay">다시 입력하기</span>
             </div>
         </div>
@@ -63,13 +63,13 @@
     <script>
         /* 다시 입력페이지로 */
         document.getElementById('replayButton').addEventListener('click', function () {
-            window.location.href = 'speech.html';
+            window.location.href = "{% url 'voice_page' %}";  // 'your_view_name'은 대상 뷰의 이름
         });
 
          /* 메인 페이지로 이동 */
          document.getElementById('closeButton').addEventListener('click', function () {
-            window.location.href = 'main.html';
-        });
+            window.location.href = "{% url 'main_page' %}";  // 'your_view_name'은 대상 뷰의 이름
+        });        
 
     </script>
 

@@ -29,7 +29,9 @@ urlpatterns = [
     path('', views.start_page, name='start_page'),
     #음성
     path('voice/', views.voice_page, name='voice_page'),
-    #음성
+    #음성결과
+    path('voice_output/', views.voice_output_page, name='voice_output_page'),
+    #음성 
     path('get_voice/', views.get_voice, name='get_voice'),
     #녹음
     path('save_recording/', views.save_recording, name='save_recording'),
