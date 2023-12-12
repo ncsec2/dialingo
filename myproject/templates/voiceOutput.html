@@ -26,6 +26,7 @@
         <div class="input_text" id="inputText">
             <!-- 여기에 텍스트를 추가합니다. -->
             <p class="input-label">표준어 번역 결과:</p>
+            <p>{{ translation_sentences }}</p>
         </div>
 
         <div class="input_text" id="outputText">
@@ -43,15 +44,15 @@
 </body>
 
     <script>
-        /* 다시 입력페이지로 */
-        document.getElementById('replayButton').addEventListener('click', function () {
-            window.location.href = "{% url 'voice_page' %}";  // 'your_view_name'은 대상 뷰의 이름
-        });
+    /* 다시 입력페이지로 */
+    document.getElementById('replayButton').addEventListener('click', function () {
+        window.location.href = "{% url 'voice_page' %}";  // 'your_view_name'은 대상 뷰의 이름
+    });
 
-         /* 메인 페이지로 이동 */
-         document.getElementById('closeButton').addEventListener('click', function () {
-            window.location.href = "{% url 'main_page' %}";  // 'your_view_name'은 대상 뷰의 이름
-        });        
+        /* 메인 페이지로 이동 */
+        document.getElementById('closeButton').addEventListener('click', function () {
+        window.location.href = "{% url 'main_page' %}";  // 'your_view_name'은 대상 뷰의 이름
+    });        
 
     </script>
 

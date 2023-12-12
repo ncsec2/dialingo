@@ -33,6 +33,8 @@ urlpatterns = [
     path('voice_output/', views.voice_output_page, name='voice_output_page'),
     #음성 
     path('get_voice/', views.get_voice, name='get_voice'),
+    #번역 
+    path('get_translation/', views.get_translation, name='get_translation'),
     #녹음
     path('save_recording/', views.save_recording, name='save_recording'),
     #텍스트

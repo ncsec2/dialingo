@@ -78,18 +78,26 @@ document.getElementById('nextButton').addEventListener('click', function () {
     var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;  // Django에서 사용하는 CSRF 토큰
     console.log(csrfToken)
     console.log(document.getElementById('inputText').innerText)
-    fetch('/voice_output/', {
+    fetch('/get_translation/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/x-www-form-urlencoded',
             'X-CSRFToken': csrfToken  // Django CSRF 토큰을 헤더에 추가
         },
-        body: 'user_sentences='+document.getElementById('inputText').innerText  // 전송할 파라미터 설정
+        body: 'user_sentences=' + encodeURIComponent(document.getElementById('inputText').innerText)
+        // body: 'user_sentences='+document.getElementById('inputText').innerText  // 전송할 파라미터 설정
     })
     .then(response => response.json())  // 원하는 형식으로 응답을 처리할 수 있습니다.
     .then(data => {
+        console.log(data)
+        // 서버 응답에서 받은 데이터를 URL 파라미터로 추가하여 페이지 이동
+        const queryParams = new URLSearchParams();
+        queryParams.set('translation_sentences', JSON.stringify(data));
+
+        // 페이지 이동
+        window.location.href = '/voice_output/?' + queryParams.toString();
         // 페이지 이동 또는 응답에 따른 다른 동작 수행
-        window.location.href = '/voice_output/';
+        // window.location.href = '/voice_output/';
     })
     .catch(error => console.error('Error:', error));
 });

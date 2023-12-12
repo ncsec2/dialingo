@@ -27,19 +27,26 @@ def start_page(request):
 def voice_page(request):
     return render(request, 'voice.html')
 
-#음성
 def voice_output_page(request):
     print("voice_output_page")
+    context = {'translation_sentences': request.GET.get('translation_sentences')}
+    return render(request, 'voiceOutput.html', context)         
+#음성
+def get_translation(request):
+    print("get_translation")
     if request.method == 'POST':
         user_sentences = request.POST.get('user_sentences', '')
-        print(user_sentences)
-        try:
-            result = run.main(user_sentences)
-            print(result)
-            # print("")
-        except Exception as e:
-            print(e.with_traceback)
-        return render(request, 'voiceOutput.html')
+        result = run.main(user_sentences)
+        print(type(result))
+
+        if result is not None:
+            return JsonResponse({'data': result})
+        else:
+            # 유효한 JSON 데이터가 아닌 경우에 대한 처리
+            return JsonResponse({'error': 'Invalid response from run.main'})
+
+    # POST 요청이 아닌 경우 404 에러 반환 또는 다른 처리
+    return JsonResponse({'error': 'Invalid request method'})
 
 #문자
 def text_page(request):
