@@ -1,0 +1,48 @@
+<!-- templates/my_template.html -->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dialingo</title>
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common.css' %}">     
+</head>
+
+<body>
+    {% block content %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <img id="micImage" src="{% static 'src/mic.png' %}" alt="Microphone" class="img-fluid mb-3">
+                <button id="startButton" class="btn btn-primary">Start Recognition</button>
+            </div>
+        </div>
+        <div class="row justify-content-center" id="output">
+        </div>        
+    </div>
+    
+
+    {% endblock %}
+
+<script>
+document.getElementById('startButton').addEventListener('click', function() {
+    fetch('/get_voice/') 
+        .then(response => response.json())  
+        .then(data => {
+            // 여기에서 서버에서 받은 JSON 데이터(data)를 활용하여 원하는 동작을 수행
+            console.log(data);
+            document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+        })
+        .catch(error => console.error('Error:', error));
+});
+</script>
+
+</body>
+</html>
+
+
+
+

@@ -7,7 +7,6 @@
   <title>Dialing</title>
   <link rel="stylesheet" href="../static/css/common.css">
   <link rel="stylesheet" href="../static/css/main.css">
-
 </head>
 
 <body>
@@ -42,10 +41,17 @@
 
     <!-- Service area -->
     <div class="service-area">
-      <button class="service-button">음성서비스</button>
-      <button class="service-button">글자서비스</button>
+      <button class="service-button" id="voice_service">음성서비스</button>
+      <button class="service-button" id="text_service">글자서비스</button>
     </div>
   </div>
 </body>
+
+<script>
+  // 버튼이 클릭되면 특정 URL로 리다이렉션하는 함수
+  document.getElementById('voice_service').addEventListener('click', function() {
+      window.location.href = "{% url 'voice_page' %}";  // 'your_view_name'은 대상 뷰의 이름
+  });
+</script>
 
 </html>
