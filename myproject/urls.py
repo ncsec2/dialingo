@@ -30,7 +30,7 @@ urlpatterns = [
     #음성
     path('voice/', views.voice_page, name='voice_page'),
     #음성
-    path('get_voice/', views.get_voice, name='voice_page'),
+    path('get_voice/', views.get_voice, name='get_voice'),
     #텍스트
     path('text/', views.text_page, name='text_page')
 ]
