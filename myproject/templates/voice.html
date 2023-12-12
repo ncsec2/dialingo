@@ -84,7 +84,7 @@ document.getElementById('micButton').addEventListener('click', function() {
         .then(data => {
             // 여기에서 서버에서 받은 JSON 데이터(data)를 활용하여 원하는 동작을 수행
             console.log(data);
-            document.getElementById('output').innerText = JSON.stringify(data, null, 2);
+            document.getElementById('inputText').innerText = JSON.stringify(data, null, 2);
         })
         .catch(error => console.error('Error:', error));
 });
