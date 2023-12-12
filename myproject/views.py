@@ -28,6 +28,10 @@ def voice_page(request):
 def text_page(request):
     return render(request, 'text.html')
 
+#언어선택
+def dialect_page(request):
+    return render(request, 'dialect.html')
+
 
 def get_voice(request):
     # Speech 서비스 설정

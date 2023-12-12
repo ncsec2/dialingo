@@ -34,5 +34,7 @@ urlpatterns = [
     #녹음
     path('save_recording/', views.save_recording, name='save_recording'),
     #텍스트
-    path('text/', views.text_page, name='text_page')
+    path('text/', views.text_page, name='text_page'),
+    #언어선택
+    path('dialect/', views.dialect_page, name='dialect_page')
 ]
