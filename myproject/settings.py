@@ -25,6 +25,7 @@ SECRET_KEY = 'django-insecure-9xbza@h%sm2#-f+^3e!f&0=wmnuf42s*52u%1+ye$itfbs(^+*
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# DEBUG = False
 
 ALLOWED_HOSTS = ['dialingo.azurewebsites.net', '127.0.0.1', 'localhost']
 
@@ -130,6 +131,13 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'myproject' / 'media'
+
+# 404 에러 페이지 설정
+handler404 = 'myproject.views.handler404'
+
+# 500 에러 페이지 설정
+handler500 = 'myproject.views.handler500'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
