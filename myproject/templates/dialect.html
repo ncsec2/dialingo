@@ -1,11 +1,11 @@
-{% load static %}
+{% load static %} {% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
-    <title>언어 선택</title>
+    <title>Dialingo</title>
     <link rel="stylesheet" href="{% static 'css/common.css' %}">
     <link rel="stylesheet" href="{% static 'css/dialect.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
@@ -54,7 +54,7 @@
                     <label for="exampleSelect">지역 방언:</label>
                     <select class="form-control" id="exampleSelect">
                         <option value="" selected disabled>선택</option>
-                        <option value="jeju">제주도</option>
+                        <option value="jeju" selected>제주도</option>
                         <option value="gyeongsang">경상도</option>
                         <option value="gangwon">강원도</option>
                         <option value="jeolla">전라도</option>
@@ -63,19 +63,18 @@
             </div>
             <div class="col-md-6">
                 <div class="form-group">
-                    <label for="exampleSelect">지역 방언:</label>
+                    <label for="exampleSelect">번역 언어:</label>
                     <select class="form-control" id="exampleSelect">
                         <option value="" selected disabled>선택</option>
-                        <option value="jeju">제주도</option>
-                        <option value="gyeongsang">경상도</option>
-                        <option value="gangwon">강원도</option>
-                        <option value="jeolla">전라도</option>
+                        <option value="Vietnamese">베트남어</option>
+                        <option value="english" selected>영어</option>
+                        <option value="japanese">일본어</option>
+                        <option value="chinese">중국어</option>
                     </select>
                 </div>
             </div>
         </div>
     
-
     </div>
 
     <script src="script.js"></script>
