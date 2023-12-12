@@ -103,10 +103,6 @@ document.getElementById('micButton').addEventListener('click', function() {
           document.getElementById('closeButton').addEventListener('click', function () {
             window.location.href = "{% url 'main_page' %}";  // 'your_view_name'은 대상 뷰의 이름
         });
-
-        {% comment %} document.getElementById('voice_service').addEventListener('click', function() {
-            window.location.href = "{% url 'voice_page' %}";  // 'your_view_name'은 대상 뷰의 이름
-        }); {% endcomment %}
 </script>
 
 </body>
