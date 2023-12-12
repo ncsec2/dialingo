@@ -39,16 +39,15 @@ def get_voice(request):
     # available_audio_devices = speechsdk.audio.AudioConfig.list_microphone_names()
     # print("Available Audio Devices:", available_audio_devices)
     
-    audio_config = speechsdk.audio.AudioConfig(use_default_microphone=True)
-    # print(audio_config)
-    # file_name = "outputaudio.wav"
-    # file_config = speechsdk.audio.AudioOutputConfig(filename=file_name)
+    # 마이크
+    # audio_config = speechsdk.audio.AudioConfig(use_default_microphone=True)
     # print(file_config)
-    speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
+    # speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 
     # 오디오 파일 또는 오디오 스트림 지정 (예: WAV 파일 경로)
-    # audio_file_path = 'path/to/your/audio/file.wav'
-    # audio_config = speechsdk.audio.AudioConfig(filename=audio_file_path)
+    audio_file_path = os.path.join(settings.MEDIA_ROOT, 'recordings', 'jeju1.wav')
+    audio_config = speechsdk.audio.AudioConfig(filename=audio_file_path)
+    speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 
     # 인식 시작
     result = speech_recognizer.recognize_once_async().get()

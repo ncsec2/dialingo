@@ -6,4 +6,4 @@ django_forms_bootstrap
 django-bootstrap4
 azure-cognitiveservices-speech
 django-storages
-azure-storage-blob
+#azure-storage-blob
