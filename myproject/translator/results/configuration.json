@@ -1,0 +1,14 @@
+{
+  "data_dir": "./dataset/",
+  "save_path": "./results/",
+  "batch_size": 128,
+  "epoch": 20,
+  "vocab_size": 4000,
+  "hidden_dim": 256,
+  "enc_layer": 6,
+  "dec_layer": 6,
+  "enc_head": 8,
+  "dec_head": 8,
+  "use_loc": true,
+  "model_path": "./results/last_model_20.pth"
+}
