@@ -1,4 +1,6 @@
-{% load static %} {% load bootstrap4 %}
+{% load static %}
+{% load bootstrap4 %}
+
 <!DOCTYPE html>
 <html lang="Ko">
 
@@ -40,6 +42,33 @@
       <img src="{% static 'src/backgorund1.png' %}" alt="Your Image">
     </div>
 
+    <!-- Select area -->
+    <div class="select-area">
+      <select class="from-button" id="from-select">
+        <!-- Dropdown menu items for 'from' selection -->
+        <option value="" selected disabled>From</option>
+        <option value="option1">제주도</option>
+        <option value="option2">경상도</option>
+        <option value="option3">강원도</option>
+        <option value="option4">전라도</option>
+        <option value="option5">충청도</option>
+      </select>
+
+      <img src="{% static 'src/arrow.png' %}" alt="Arrow Image">
+
+      <select class="to-button" id="to-select">
+        <!-- Dropdown menu items for 'to' selection -->
+        <option value="" selected disabled>To</option>
+        <option value="option1">베트남어</option>
+        <option value="option2">영어</option>
+        <option value="option3">일본어</option>
+        <option value="option4">중국어</option>
+        <option value="option5">캄보디아어</option>
+        <option value="option6">태국어</option>
+        <option value="option7">필리핀어</option>
+      </select>
+    </div>
+
     <!-- Service area -->
     <div class="service-area">
       <button class="service-button" id="voice_service">음성서비스</button>
@@ -51,17 +80,11 @@
 <script>
   // 버튼이 클릭되면 특정 URL로 리다이렉션하는 함수
   document.getElementById('voice_service').addEventListener('click', function() {
-      window.location.href = "{% url 'voice_page' %}";  // 'your_view_name'은 대상 뷰의 이름
+    window.location.href = "{% url 'voice_page' %}"; // 'your_view_name'은 대상 뷰의 이름
   });
   document.getElementById('text_service').addEventListener('click', function() {
-      window.location.href = "{% url 'hello_world' %}";  // 'your_view_name'은 대상 뷰의 이름
-  }); 
-  
-  /*
-  document.getElementById('voice_service').addEventListener('click', function () {
-    window.location.href = 'speech.html';
+    window.location.href = "{% url 'hello_world' %}"; // 'your_view_name'은 대상 뷰의 이름
   });
-  */
 </script>
 
 </html>
