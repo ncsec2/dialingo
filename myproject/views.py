@@ -12,21 +12,24 @@ import os
 def hello_world(request):
     return render(request, 'record.html')
 
+#음성, 문자 선택
 def main_page(request):
     return render(request, 'main.html')
 
+#시작하기
 def start_page(request):
     return render(request, 'start.html')
 
+#음성
 def voice_page(request):
     return render(request, 'voice.html')
 
+#문자
 def text_page(request):
     return render(request, 'text.html')
 
 
 def get_voice(request):
-    print("get voice==============")
     # Speech 서비스 설정
     speech_key = 'a57a40a167fb4e108f0a76da10b11c00'
     service_region = 'koreacentral'
@@ -45,8 +48,7 @@ def get_voice(request):
     # speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 
     # 오디오 파일 또는 오디오 스트림 지정 (예: WAV 파일 경로)
-    print(settings.MEDIA_ROOT)
-    audio_file_path = os.path.join(settings.MEDIA_ROOT, 'recordings', 'jeju1.wav')
+    audio_file_path = os.path.join(settings.MEDIA_ROOT, 'recordings', 'jeju3.wav')
     audio_config = speechsdk.audio.AudioConfig(filename=audio_file_path)
     speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
 
