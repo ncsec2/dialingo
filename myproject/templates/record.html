@@ -1,0 +1,80 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Recorder</title>
+</head>
+<body>
+    <button id="startRecording">Start Recording</button>
+    <button id="stopRecording" disabled>Stop Recording</button>
+    <button id="saveRecording" disabled>Save Recording</button>
+    <audio controls id="audioPlayer" style="display: none;"></audio>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const startRecordingButton = document.getElementById('startRecording');
+            const stopRecordingButton = document.getElementById('stopRecording');
+            const saveRecordingButton = document.getElementById('saveRecording');
+            const audioPlayer = document.getElementById('audioPlayer');
+            let mediaRecorder;
+            let audioChunks = [];
+
+            async function startRecording() {
+                const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = event => {
+                    if (event.data.size > 0) {
+                        audioChunks.push(event.data);
+                    }
+                };
+
+                mediaRecorder.onstop = () => {
+                    saveRecordingButton.disabled = false;
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    audioPlayer.src = audioUrl;
+                    audioPlayer.style.display = 'block';
+                };
+
+                mediaRecorder.start();
+                startRecordingButton.disabled = true;
+                stopRecordingButton.disabled = false;
+            }
+
+            function stopRecording() {
+                if (mediaRecorder.state === 'recording') {
+                    mediaRecorder.stop();
+                    startRecordingButton.disabled = false;
+                    stopRecordingButton.disabled = true;
+                }
+            }
+
+            function saveRecording() {
+                const formData = new FormData();
+                const audioBlob = new Blob(audioChunks, { type: 'audio/wav'});
+                // const audioBlob = new Blob(audioChunks, { type: audioChunks[0]['type'] });
+                formData.append('audio', audioBlob, 'recording.wav');
+                //formData.append('audio', audioBlob, 'recording.webm')
+
+                fetch('/save_recording/', {
+                    method: 'POST',
+                    body: formData
+                })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.message); // 서버에서의 응답 메시지
+                })
+                .catch(error => console.error('Error:', error));
+            }
+
+            startRecordingButton.addEventListener('click', startRecording);
+            stopRecordingButton.addEventListener('click', stopRecording);
+            saveRecordingButton.addEventListener('click', saveRecording);
+        });
+    </script>
+</body>
+</html>
