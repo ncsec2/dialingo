@@ -3,22 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>안드로이드 앱</title>
+  <title>Dialingo</title>
   <link rel="stylesheet" href="../static/css/common.css">
   <link rel="stylesheet" href="../static/css/start.css">
 </head>
 <body>
-  <div class="container">
-    <div class="logo"></div> <!-- 로고 이미지는 CSS에서 배경 이미지로 설정됨 -->
-    <div class="content">
-      <p>각 지역의 방언을 원하는 언어로
-        <br>
-        번역 및 통역 서비스를 제공합니다.</p>
+  <form action="{% url 'main_page' %}">
+    <div class="container">
+      <div class="logo"></div> <!-- 로고 이미지는 CSS에서 배경 이미지로 설정됨 -->
+      <div class="content">
+        <p>각 지역의 방언을 원하는 언어로
+          <br>
+          번역 및 통역 서비스를 제공합니다.</p>
+      </div>
+      <div class="buttonContainer">
+        <button id="startButton" onclick="submit">시작하기</button>
+      </div>
     </div>
-    <div class="buttonContainer">
-      <button id="startButton">시작하기</button>
-    </div>
-  </div>
+  </form>
   <script src="../js/start.js"></script>
 </body>
 </html>
