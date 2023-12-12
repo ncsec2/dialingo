@@ -7,11 +7,15 @@ import sentencepiece as spm
 from .model import Transformer, Encoder, Decoder
 
 def main(args):
-
+    print("os.path.dirname(args.ckpt): ", os.path.dirname(args.ckpt))
     # Get configuration
-    config_path = os.path.join(os.path.dirname(args.ckpt),'configuration.json')
+    # config_path = os.path.dirname(args.ckpt)+'/configuration.json'
+    config_path = '../translator/results/configuration.json'
+    print(config_path)
     with open(config_path,'r') as f:
+        print(f)
         config = json.load(f)
+        
 
     # Load Dataset
     sp = spm.SentencePieceProcessor()

@@ -5,8 +5,9 @@ import azure.cognitiveservices.speech as speechsdk
 from django.views.decorators.csrf import csrf_exempt
 from django.conf import settings
 import os
-import argparse
-from .translator import infer
+# import argparse
+from .translator import infer, run
+
 
 # def hello_world(request):
 #     return HttpResponse("Hello, World!")
@@ -28,7 +29,17 @@ def voice_page(request):
 
 #음성
 def voice_output_page(request):
-    return render(request, 'voiceOutput.html')
+    print("voice_output_page")
+    if request.method == 'POST':
+        user_sentences = request.POST.get('user_sentences', '')
+        print(user_sentences)
+        try:
+            result = run.main(user_sentences)
+            print(result)
+            # print("")
+        except Exception as e:
+            print(e.with_traceback)
+        return render(request, 'voiceOutput.html')
 
 #문자
 def text_page(request):

@@ -1,5 +1,5 @@
 <!-- templates/my_template.html -->
-{% load static %}
+{% load static %}{% csrf_token %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -84,25 +84,55 @@ document.getElementById('micButton').addEventListener('click', function() {
         .then(data => {
             // 여기에서 서버에서 받은 JSON 데이터(data)를 활용하여 원하는 동작을 수행
             console.log(data);
-            document.getElementById('inputText').innerText = JSON.stringify(data, null, 2);
+
+            if(Object.keys(data)[0] == 'transcription') {
+                document.getElementById('inputText').innerText = JSON.stringify(data['transcription'], null, 2);
+            } else {
+                document.getElementById('inputText').innerText = JSON.stringify(data['error'], null, 2);
+            }
+            // console.log()
+            // document.getElementById('inputText').innerText = JSON.stringify(data, null, 2);
         })
         .catch(error => console.error('Error:', error));
 });
 
-        /* 결과 페이지로 넘어가기 */
-        document.getElementById('nextButton').addEventListener('click', function () {
-            window.location.href = "{% url 'voice_output_page' %}";  // 'your_view_name'은 대상 뷰의 이름
-        });
+/* 결과 페이지로 넘어가기 */
+// document.getElementById('nextButton').addEventListener('click', function () {
+//     window.location.href = "{% url 'voice_output_page' %}";  // 'your_view_name'은 대상 뷰의 이름
+// });
 
-        /* 다시 입력페이지로 */
-        document.getElementById('replayButton').addEventListener('click', function () {
-            window.location.href = "{% url 'voice_page' %}";  // 'your_view_name'은 대상 뷰의 이름
-        });
+document.getElementById('nextButton').addEventListener('click', function () {
+    var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;  // Django에서 사용하는 CSRF 토큰
+    console.log(csrfToken)
+    console.log(document.getElementById('inputText').innerText)
+    fetch('/voice_output/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+            'X-CSRFToken': csrfToken  // Django CSRF 토큰을 헤더에 추가
+        },
+        body: 'user_sentences='+document.getElementById('inputText').innerText  // 전송할 파라미터 설정
+    })
+    .then(response => response.json())  // 원하는 형식으로 응답을 처리할 수 있습니다.
+    .then(data => {
+        // 페이지 이동 또는 응답에 따른 다른 동작 수행
+        window.location.href = '/voice_output/';
+    })
+    .catch(error => console.error('Error:', error));
+});
 
-          /* 메인 페이지로 이동 */
-          document.getElementById('closeButton').addEventListener('click', function () {
-            window.location.href = "{% url 'main_page' %}";  // 'your_view_name'은 대상 뷰의 이름
-        });
+
+
+/* 다시 입력페이지로 */
+document.getElementById('replayButton').addEventListener('click', function () {
+    window.location.href = "{% url 'voice_page' %}";  // 'your_view_name'은 대상 뷰의 이름
+});
+
+    /* 메인 페이지로 이동 */
+    document.getElementById('closeButton').addEventListener('click', function () {
+    
+    window.location.href = "{% url 'main_page' %}";  // 'your_view_name'은 대상 뷰의 이름
+});
 </script>
 
 </body>
