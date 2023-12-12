@@ -10,43 +10,12 @@
     <link rel="stylesheet" href="{% static 'css/voice.css' %}">     
 </head>
 
-<body>
-<!--
-    {% block content %}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <img id="micImage" src="{% static 'src/mic.png' %}" alt="Microphone" class="img-fluid mb-3">
-                <button id="startButton" class="btn btn-primary">Start Recognition</button>
-            </div>
-        </div>
-        <div class="row justify-content-center" id="output">
-        </div>        
-    </div>
-    {% endblock %}
--->
-        
+<body>       
     <div class="container">
         <div class="navigation">
-            <!-- Menu dropdown -->
-            <div class="dropdown">
-                <button class="menu-button">Menu</button>
-                <div class="dropdown-content">
-                    <!-- Dropdown menu items -->
-                    <a href="#">Item 1</a>
-                    <a href="#">Item 2</a>
-                    <a href="#">Item 3</a>
-                </div>
-            </div>
-
-            <!-- Language dropdown -->
-            <div class="dropdown">
-                <button class="language-button">Language</button>
-                <div class="dropdown-content">
-                    <!-- Dropdown menu items for language selection -->
-                    <a href="#">한국어</a>
-                    <a href="#">English</a>
-                </div>
+            <!-- Logo Image -->
+            <div class="logo-container">
+                <img src="{% static 'src/logo_text.png' %}" alt="Your Logo" id="logoButton">
             </div>
         </div>
 
@@ -75,6 +44,8 @@
             </div>
         </div>
     </div>
+
+</body>
 
 <script>
 document.getElementById('micButton').addEventListener('click', function() {
@@ -137,9 +108,5 @@ document.getElementById('replayButton').addEventListener('click', function () {
 });
 </script>
 
-</body>
 </html>
-
-
-
 

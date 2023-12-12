@@ -6,35 +6,15 @@
 <head>
     <meta charset="UTF-8">
     <title>speech-service</title>
-    <link rel="stylesheet" href="{% static 'css/voiceOutput.css' %}">     
-
-
-
+    <link rel="stylesheet" href="{% static 'css/voiceOutput.css' %}">
 </head>
 
 <body>
-
     <div class="container">
         <div class="navigation">
-            <!-- Menu dropdown -->
-            <div class="dropdown">
-                <button class="menu-button">Menu</button>
-                <div class="dropdown-content">
-                    <!-- Dropdown menu items -->
-                    <a href="#">Item 1</a>
-                    <a href="#">Item 2</a>
-                    <a href="#">Item 3</a>
-                </div>
-            </div>
-
-            <!-- Language dropdown -->
-            <div class="dropdown">
-                <button class="language-button">Language</button>
-                <div class="dropdown-content">
-                    <!-- Dropdown menu items for language selection -->
-                    <a href="#">한국어</a>
-                    <a href="#">English</a>
-                </div>
+            <!-- Logo Image -->
+            <div class="logo-container">
+                <img src="{% static 'src/logo_text.png' %}" alt="Your Logo" id="logoButton">
             </div>
         </div>
 
@@ -60,6 +40,8 @@
         </div>
     </div>
 
+</body>
+
     <script>
         /* 다시 입력페이지로 */
         document.getElementById('replayButton').addEventListener('click', function () {
@@ -73,6 +55,5 @@
 
     </script>
 
-</body>
 
 </html>
