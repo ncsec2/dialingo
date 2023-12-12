@@ -21,8 +21,9 @@ def main(args):
         config = json.load(f)
 
     # Load Dataset
+    data_dir_path = os.path.abspath(os.path.join(settings.TRANSLATOR_ROOT, args.data_dir))
     sp = spm.SentencePieceProcessor()
-    sp.Load(f'{args.data_dir}/bpe_{config["vocab_size"]}.model')
+    sp.Load(f'{data_dir_path}/bpe_{config["vocab_size"]}.model')
 
     # Load Model
     device = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
@@ -54,7 +55,8 @@ def main(args):
         device
     ).to(device)
 
-    ckpt = torch.load(args.ckpt, map_location=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu'))
+
+    ckpt = torch.load(absolute_path, map_location=torch.device('cuda:0' if torch.cuda.is_available() else 'cpu'))
     model.load_state_dict(ckpt)
 
     ### Translate Custom Sequence ###
