@@ -124,7 +124,7 @@ def get_voice(request, wav_name=None):
 
     # 오디오 파일 또는 오디오 스트림 지정 (예: WAV 파일 경로)
     print("wav_name: ", wav_name, type(wav_name))
-    audio_file_path = os.path.join(settings.MEDIA_ROOT, 'recordings', 'jeju4.wav')
+    audio_file_path = os.path.join(settings.MEDIA_ROOT, 'recordings', 'jeju3.wav')
 
     if wav_name is not None:        
         audio_file_path = os.path.join(settings.MEDIA_ROOT, 'recordings', str(wav_name))
