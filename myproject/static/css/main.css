@@ -99,6 +99,10 @@ body {
   z-index: 1;
 }
 
+select{
+  border-radius: 10px;
+}
+
 .select-area img {
   max-width: 20px;
   margin: 0 5px;
