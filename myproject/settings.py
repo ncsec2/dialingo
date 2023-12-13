@@ -56,10 +56,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware'
 ]
 
-CORS_ALLOWED_ORIGINS = [
-    "https://dialingo2.azurewebsites.net",
-    "https://dialingo.azurewebsites.net"
-]
+CORS_ALLOWED_ORIGINS = True
 
 ROOT_URLCONF = 'myproject.urls'
 
