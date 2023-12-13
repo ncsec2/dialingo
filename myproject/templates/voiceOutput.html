@@ -56,7 +56,7 @@
     document.getElementById('translation').addEventListener('click', function () {
         console.log("clicked")
         var org_translationSentences = JSON.parse('{{ translation_sentences|safe }}');
-        var translationSentences = org_translationSentences['data'].replace('<eos>', '').replace(' ','').replace('▁',' ')
+        var translationSentences = org_translationSentences['data'].replace('<eos>', '').replace(/ /g,'').replace(/▁/g,' ')
         console.log(translationSentences)
         fetch('/lang_translation/', {
             method: 'POST',
