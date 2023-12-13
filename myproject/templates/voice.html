@@ -34,14 +34,15 @@
 
 
         <div class="footer">
-            <div class="button-wrapper">
-                <img src="{% static 'src/replay.png' %}" id="replayButton" alt="Repeat" width="30" height="30">
-                <span id="replay">다시 입력하기</span>
-            </div>
-            <div class="button-wrapper">
-                <img src="{% static 'src/next.png' %}" id="nextButton" alt="Next" width="30" height="30">
+            <div class="button-wrapper" id='nextButton'>
+                <img src="{% static 'src/next.png' %}" alt="Next" width="30" height="30">
                 <span id="next">결과 확인하기</span>
             </div>
+            <div class="button-wrapper" id="replayButton">
+                <img src="{% static 'src/replay.png' %}" alt="Repeat" width="30" height="30">
+                <span id="replay">다시 입력하기</span>
+            </div>
+
         </div>
     </div>
 
