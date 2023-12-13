@@ -89,6 +89,10 @@ body {
 
 /* Select area */
 .select-area {
+  width: 360px;
+  max-width: calc(100% - 40px); /* 오른쪽 및 왼쪽 패딩을 고려한 값으로 설정 */
+  box-sizing: border-box; /* 패딩과 테두리를 포함한 크기 설정 */
+
   display: flex;
   align-items: center;
   justify-content: center;
@@ -99,10 +103,26 @@ body {
   z-index: 1;
 }
 
-select{
-  border-radius: 10px;
+/* Modified styling for select elements */
+.select-button {
+  padding: 5px 5px; /* Padding 수정 */
+  font-size: 16px; /* Font 사이즈 수정 */
+  border-radius: 25px; /* 테두리를 더 둥글게 만듦 */
+  border: 2px solid #0693F1; /* 테두리 추가 및 색상 설정 */
+  width: 120px; /* 너비 조정 */
+  outline: none; /* 기본 포커스 스타일 제거 */
+  transition: border-color 0.3s ease-in-out; /* 변화에 애니메이션 효과 추가 */
+
+  /* 추가적인 선택적 스타일링 */
+  /* 만약 선택된 요소에 대한 스타일을 원한다면 다음 스타일을 사용할 수 있습니다. */
+  /* 예를 들어, 선택된 요소의 배경색을 변경하려면 아래 스타일을 사용하세요. */
+  /* background-color: #0693F1; */
 }
 
+/* Hover 효과 */
+.select-button:hover {
+  border-color: #FFFFFF; /* Hover 효과 시 테두리 색상 변경 */
+}
 .select-area img {
   max-width: 20px;
   margin: 0 5px;
