@@ -28,9 +28,9 @@
 
     <!-- Select area -->
     <div class="select-area">
-      <select class="from-button" id="from-select">
+      <select class="select-button" id="from-select">
         <!-- Dropdown menu items for 'from' selection -->
-        <option value="" selected disabled>방언 지역 선택</option>
+        <option value="" selected disabled hidden>방언 지역 선택</option>
         <option value="option1">제주도</option>
         <option value="option2">경상도</option>
         <option value="option3">강원도</option>
@@ -40,16 +40,16 @@
 
       <img src="{% static 'src/arrow.png' %}" alt="Arrow Image">
 
-      <select class="to-button" id="to-select">
+      <select class="select-button" id="to-select">
         <!-- Dropdown menu items for 'to' selection -->
-        <option value="" selected disabled>번역 언어 선택</option>
-        <option value="option1">베트남어</option>
+        <option value="" selected disabled hidden>번역 언어 선택</option>
+        <option value="option1" disabled>베트남어</option>
         <option value="option2">영어</option>
-        <option value="option3">일본어</option>
-        <option value="option4">중국어</option>
-        <option value="option5">캄보디아어</option>
-        <option value="option6">태국어</option>
-        <option value="option7">필리핀어</option>
+        <option value="option3" disabled>일본어</option>
+        <option value="option4" disabled>중국어</option>
+        <option value="option5" disabled>캄보디아어</option>
+        <option value="option6" disabled>태국어</option>
+        <option value="option7" disabled>필리핀어</option>
       </select>
     </div>
 

@@ -82,6 +82,7 @@ body {
     position: relative; /* 추가된 부분: 절대 위치 설정을 위한 부모 요소 */
 }
 
+
 .input-label {
     position: absolute;
     top: 0px;
@@ -90,6 +91,21 @@ body {
     font-weight: bold;
     color: #333;
 }
+
+/* 화살표 이미지 스타일 */
+.arrow-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* 필요에 따라 조정 가능한 여백 */
+}
+
+.arrow-image img {
+    width: 50px; /* 이미지 크기 조정 */
+    height: 50px;
+}
+
+
 /* Footer */
 .footer {
     display: flex;
