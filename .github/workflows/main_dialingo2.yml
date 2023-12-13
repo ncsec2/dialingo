@@ -64,4 +64,4 @@ jobs:
         with:
           app-name: 'dialingo2'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E43F4909A85C4DCB89AE1372805F3A96 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_99C347037A6943D799F56744BC7091BC }}
