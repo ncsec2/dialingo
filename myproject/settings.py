@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-9xbza@h%sm2#-f+^3e!f&0=wmnuf42s*52u%1+ye$itfbs(^+*
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['dialingo2.azurewebsites.net', 'dialingo.azurewebsites.net', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['dialingo2.azurewebsites.net', 'dialingo.azurewebsites.net', '127.0.0.1', 'localhost', '169.254.131.2']
 
 
 # Application definition
