@@ -130,7 +130,7 @@ STATIC_ROOT = BASE_DIR / 'static'
 
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'myproject' / 'media'
+MEDIA_ROOT = BASE_DIR / 'myproject' / 'static'
 
 TRANSLATOR_URL = '/translator/'
 TRANSLATOR_ROOT = BASE_DIR / 'myproject' / 'translator'

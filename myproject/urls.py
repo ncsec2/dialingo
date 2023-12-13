@@ -35,6 +35,8 @@ urlpatterns = [
     path('get_voice/', views.get_voice, name='get_voice'),
     #번역 
     path('get_translation/', views.get_translation, name='get_translation'),
+    #언어번역
+    path('lang_translation/', views.lang_translation, name='lang_translation'),
     #녹음
     path('save_recording/', views.save_recording, name='save_recording'),
     #텍스트

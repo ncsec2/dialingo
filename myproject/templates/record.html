@@ -55,14 +55,20 @@
 
             function saveRecording() {
                 const formData = new FormData();
-                const audioBlob = new Blob(audioChunks, { type: 'audio/wav'});
+                const audioBlob = new Blob(audioChunks, { 'type' : 'audio/ogg; codecs=opus' });
+                console.log(audioBlob);
+                // console.log(audioChunks[0]['type'])
                 // const audioBlob = new Blob(audioChunks, { type: audioChunks[0]['type'] });
-                formData.append('audio', audioBlob, 'recording.wav');
+                formData.append('audio', audioBlob);
                 //formData.append('audio', audioBlob, 'recording.webm')
 
                 fetch('/save_recording/', {
                     method: 'POST',
-                    body: formData
+                    // headers: { 'Content-Type': 'audio/webm' },
+                    // headers: { 'Content-Type': 'multipart/form-data' },
+                    
+                    body: formData     
+                    // body: audioBlob               
                 })
                 .then(response => response.json())
                 .then(data => {
